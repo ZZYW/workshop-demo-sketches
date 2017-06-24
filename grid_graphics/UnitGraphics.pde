@@ -7,63 +7,69 @@ class UnitGraphics {
   int vn;
 
   ArrayList<PVector> points;
+  color[] colors;
   FloatList angles;
-  float rotateAngle;
-  float rotateSpeed;
+  float rotateXAngle;
+  float rotateYAngle;
+  float rotateZAngle;
+  float xRotateSpeed, yRotateSpeed, zRotateSpeed;
   boolean showCenter;
-  PGraphics graphics;
+  float strokeWeight;
 
-
-
-  UnitGraphics(PApplet mainClass, PVector _c, float _w, float _h) {
+  UnitGraphics(PVector _c, float _w, float _h) {
     w = _w;
     h = _h;
-    d = 100;
+    d = w;
     center = _c;
     vn = 20;
     points = new ArrayList<PVector>();
     angles = new FloatList();
-    rotateSpeed = random(0.001, 0.006);
+    xRotateSpeed = random(0.001, 0.006);
+    yRotateSpeed = random(0.001, 0.006);
+    zRotateSpeed = random(0.001, 0.006);
     showCenter = true;
-    graphics = createGraphics((int)w, (int)h, P3D);
+    strokeWeight = 2;
   }
 
   void init() {
+    colors = new color[vn];
     for (int i=0; i<vn; i++) {
-      points.add(new PVector(random(0, w), random(0, h), random(0, d) ));
+      points.add(new PVector(random(-w/2, w), random(-h/2, h/2), random(-d/2, d/2)));
       angles.append(random(0, PI));
+      if (random(0, 1)>0.85) {
+        colors[i] = color(random(255), random(255), random(255));
+      } else {
+        colors[i] = color(255);
+      }
     }
   }
 
   void display() {
-    graphics.beginDraw();
-
-    graphics.ortho();
-    rotateAngle+=rotateSpeed;
+    rotateXAngle+=xRotateSpeed;
+    rotateYAngle+=yRotateSpeed;
+    rotateZAngle+=zRotateSpeed;
+    pushMatrix();
+    translate(center.x, center.y);
+    scale(0.4);
+    rotateX(rotateXAngle);    
+    rotateY(rotateYAngle);    
+    rotateZ(rotateZAngle);
 
     if (showCenter) {
-      graphics.stroke(243, 3, 130);
-      graphics.strokeWeight(7);
-      graphics.point(w/2, h/2);
+      stroke(255, 0, 0);
+      strokeWeight(8);
+      point(0, 0);
     }
 
-    graphics.stroke(255);    
-    graphics.strokeWeight(2);
-    graphics.noFill();
-
-    graphics.beginShape();
-    for (PVector p : points) {
-      graphics.vertex(p.x, p.y, p.z);
+    strokeWeight(5);
+    noFill();
+    
+    beginShape();
+    for (int i=0; i<points.size(); i++) {
+      stroke(colors[i]);
+      curveVertex(points.get(i).x, points.get(i).y, points.get(i).z);
     }
-
-    graphics.endShape();
-    graphics.endDraw();
-    pushMatrix();    
-    translate(center.x, center.y);
-    scale(0.6);
-    rotate(rotateAngle);
-    imageMode(CENTER);
-    image(graphics, 0, 0);
+    endShape();
     popMatrix();
   }
 }

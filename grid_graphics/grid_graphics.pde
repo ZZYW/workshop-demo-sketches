@@ -6,8 +6,8 @@ import peasy.org.apache.commons.math.geometry.*;
 UnitGraphics[][] ugs;
 
 float ugWidth, ugHeight;
-int horizontalN = 6;
-int verticalN = 6;
+int horizontalN = 5;
+int verticalN = 5;
 
 GlitchP5 glitchP5;
 
@@ -16,7 +16,7 @@ void setup() {
   //ortho();
 
   glitchP5 = new GlitchP5(this);
-
+  ortho();
   ugWidth = width/horizontalN;
   ugHeight = height/verticalN;
   ugs = new UnitGraphics[horizontalN][verticalN];
@@ -25,9 +25,9 @@ void setup() {
     for (int y=0; y < verticalN; y++) {
       float tempx = x * ugWidth;
       float tempy = y * ugHeight;
-      float tempz = 100;
+      float tempz = tempx;
 
-      ugs[x][y] = new UnitGraphics(this, new PVector(tempx, tempy, tempz), ugWidth, ugHeight);
+      ugs[x][y] = new UnitGraphics(new PVector(tempx, tempy, tempz), ugWidth, ugHeight);
       ugs[x][y].init();
     }
   }
@@ -37,6 +37,8 @@ void setup() {
 void draw() {
   background(0);
   translate(ugWidth/2, ugHeight/2);
+  strokeCap(SQUARE);
+  strokeJoin(BEVEL);
   for (int x=0; x < horizontalN; x++) {
     for (int y=0; y < verticalN; y++) {
       ugs[x][y].display();
