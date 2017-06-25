@@ -8,7 +8,7 @@ PImage r, g, b;
 boolean glitchOn;
 
 void setup() {
-  size(1000, 1000, P3D);
+  size(600, 600, P3D);
   opencv = new OpenCV(this, get());
   rno=0;
   gno=323;
@@ -16,12 +16,15 @@ void setup() {
 }
 
 void draw() {
+  background(0);
+  fill(255);
+  text(frameRate, 20, 20);
   if (frameCount % 200 < 15) {
     glitchOn = true;
   } else {
     glitchOn = false;
   }
-  background(0);
+
 
   rax+=0.001;
   ray+=0.001;
@@ -68,6 +71,6 @@ void draw() {
 }
 
 
-void mousePressed(){
+void mousePressed() {
   save("a");
 }
