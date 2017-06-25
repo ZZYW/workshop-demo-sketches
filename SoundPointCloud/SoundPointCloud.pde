@@ -6,8 +6,6 @@ import org.openkinect.freenect.*;
 import org.openkinect.processing.*;
 import processing.sound.*;
 
-
-
 // Kinect Library object
 Kinect kinect;
 

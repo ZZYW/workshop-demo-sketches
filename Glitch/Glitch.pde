@@ -8,7 +8,7 @@ PImage r, g, b;
 boolean glitchOn;
 
 void setup() {
-  size(600, 600, P3D);
+  size(1000, 1000, P3D);
   opencv = new OpenCV(this, get());
   rno=0;
   gno=323;
@@ -65,4 +65,9 @@ void draw() {
     int cutHeight = (int)random(50, 300);
     image( get(0, offsetBlockY, width, cutHeight), random(5, 10), offsetBlockY);
   }
+}
+
+
+void mousePressed(){
+  save("a");
 }
