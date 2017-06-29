@@ -21,7 +21,7 @@ void setup() {
   opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE);
   //active video
   video.start();
-  font = createFont("STSong", 350);
+  font = createFont("STSong", 300);
 }
 
 void draw() {
@@ -29,24 +29,27 @@ void draw() {
   if (video.available()) {
     video.read();
     opencv.loadImage(video);
-    //image(video, 0, 0, video.width, video.height);
+
     faces = opencv.detect();
 
     if (faces.length!=0) {
       hasFace = true;
-
-      //noStroke();
-      //fill(255, 255, 0);
-      //for (int i = 0; i < faces.length; i++) {
-      //  ellipseMode(CORNER);
-      //  ellipse(faces[i].x, faces[i].y, faces[i].width, faces[i].height);
-      //}
     } else {
       hasFace = false;
     }
   }
 
-
+  pushMatrix();
+  scale(0.843, 1);
+  image(video, 0, 0, video.width, video.height);
+  for (int i=0; i<faces.length; i++) {
+    //rectMode(CENTER);
+    stroke(0, 255, 0);
+    strokeWeight(4);
+    noFill();
+    rect(faces[i].x, faces[i].y, faces[i].width, faces[i].height);
+  }
+  popMatrix();
   textAlign(CENTER, CENTER);
   textFont(font);
   if (faces != null) {

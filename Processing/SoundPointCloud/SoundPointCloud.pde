@@ -45,7 +45,7 @@ void setup() {
 
 
   //cam
-  //pcam = new PeasyCam(this, 100);
+  pcam = new PeasyCam(this, 100);
   //pcam.setMinimumDistance(-200);
   //pcam.setMaximumDistance(1000);
 }
@@ -60,13 +60,13 @@ void draw() {
   int[] depth = kinect.getRawDepth();
 
   // We're just going to calculate and draw every 4th pixel (equivalent of 160x120)
-  int skip = 5;
+  int skip = 3;
 
   // Translate and rotate
   translate(width/2, height/2, 300);
-  rotateY(a);
+  //rotateY(a);
 
-
+  beginShape(POINTS);
   for (int x = 0; x < kinect.width; x += skip) {
     for (int y = 0; y < kinect.height; y += skip) {
       int offset = x + y*kinect.width;
@@ -76,19 +76,22 @@ void draw() {
       PVector v = depthToWorld(x, y, rawDepth);
 
       stroke(255);
-      strokeWeight(2);
+      strokeWeight(1);
+
       pushMatrix();
       // Scale up by 200
       float factor = 200;
+      vertex(v.x*factor, v.y*factor, factor-v.z*factor);
       translate(v.x*factor, v.y*factor, factor-v.z*factor);
       // Draw a point
-      point(random(-randomRange, randomRange), 
-        random(-randomRange, randomRange), 
-        random(-randomRange, randomRange));
+      //point(random(-randomRange, randomRange), 
+      //  random(-randomRange, randomRange), 
+      //  random(-randomRange, randomRange));
 
       popMatrix();
     }
   }
+  endShape();
 
 
   // Rotate

@@ -13,8 +13,6 @@ GlitchP5 glitchP5;
 
 void setup() {
   size(900, 900, P3D);
-  //ortho();
-
   glitchP5 = new GlitchP5(this);
   ortho();
   ugWidth = width/horizontalN;
@@ -53,3 +51,9 @@ void draw() {
 //void mousePressed() {
 //  glitchP5.glitch(mouseX, mouseY, 200, 400, 200, (int)ugHeight, 3, 1.0f, 10, 40);
 //}
+
+void keyPressed() {
+  if (key == 's') {
+    save(frameCount+".png");
+  }
+}
