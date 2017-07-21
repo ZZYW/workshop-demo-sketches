@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/ortho fog test.unity
-  isLoaded: 1
-  isActive: 1
