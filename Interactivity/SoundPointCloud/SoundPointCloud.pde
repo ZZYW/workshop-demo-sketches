@@ -22,6 +22,10 @@ float randomRange = 0;
 AudioIn sample;
 Amplitude rms;
 
+ArrayList<PVector> vertices;
+
+
+
 //peasycam
 PeasyCam pcam;
 
@@ -41,52 +45,60 @@ void setup() {
   rms = new Amplitude(this);
   rms.input(sample);
 
-  //cam
+  vertices = new ArrayList<PVector>();
+
+  ////cam
   pcam = new PeasyCam(this, 100);
 }
 
 void draw() {
 
   background(0);
+
   float analyzed = rms.analyze();
-  randomRange = analyzed * 200;
+  randomRange = analyzed * 500;
 
   // Get the raw depth as array of integers
   int[] depth = kinect.getRawDepth();
 
   // We're just going to calculate and draw every 4th pixel (equivalent of 160x120)
-  int skip = 3;
+  int skip = 30;
 
   // Translate and rotate
   translate(width/2, height/2, 300);
   //rotateY(a);
 
-
   for (int x = 0; x < kinect.width; x += skip) {
     for (int y = 0; y < kinect.height; y += skip) {
       int offset = x + y*kinect.width;
-
       // Convert kinect data to world xyz coordinate
       int rawDepth = depth[offset];
       PVector v = depthToWorld(x, y, rawDepth);
+      v = v.mult(200);
+      vertices.add(v);
+    }
+  }
 
-      stroke(255);
-      strokeWeight(1);
+  for (PVector p : vertices) {
+    p.add(new PVector(random(-randomRange, randomRange), 0, 0));
+  }
 
-      pushMatrix();
-      // Scale up by 200
-      float factor = 200;
 
-      translate(v.x*factor, v.y*factor, factor-v.z*factor);
-      // Draw a point
-      point(random(-randomRange, randomRange), 
-        random(-randomRange, randomRange), 
-        random(-randomRange, randomRange));
+  stroke(255);
+  println(vertices.size());
 
-      popMatrix();
+
+  for (PVector p : vertices) {
+    //vertex(p.x, p.y, p.z);
+    for (PVector p2 : vertices) {
+      if (PVector.dist(p, p2) < 30) {
+        line(p.x, p.y, p.z, p2.x, p2.y, p2.z);
+      }
     }
   }
   endShape();
+
+  vertices.clear();
 
 
   // Rotate
