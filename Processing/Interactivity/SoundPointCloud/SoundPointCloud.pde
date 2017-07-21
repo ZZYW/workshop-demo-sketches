@@ -22,10 +22,8 @@ float randomRange = 0;
 AudioIn sample;
 Amplitude rms;
 
-
 //peasycam
 PeasyCam pcam;
-
 
 void setup() {
   // Rendering in P3D
@@ -43,11 +41,8 @@ void setup() {
   rms = new Amplitude(this);
   rms.input(sample);
 
-
   //cam
   pcam = new PeasyCam(this, 100);
-  //pcam.setMinimumDistance(-200);
-  //pcam.setMaximumDistance(1000);
 }
 
 void draw() {
@@ -66,7 +61,7 @@ void draw() {
   translate(width/2, height/2, 300);
   //rotateY(a);
 
-  beginShape(POINTS);
+
   for (int x = 0; x < kinect.width; x += skip) {
     for (int y = 0; y < kinect.height; y += skip) {
       int offset = x + y*kinect.width;
@@ -81,12 +76,12 @@ void draw() {
       pushMatrix();
       // Scale up by 200
       float factor = 200;
-      vertex(v.x*factor, v.y*factor, factor-v.z*factor);
+
       translate(v.x*factor, v.y*factor, factor-v.z*factor);
       // Draw a point
-      //point(random(-randomRange, randomRange), 
-      //  random(-randomRange, randomRange), 
-      //  random(-randomRange, randomRange));
+      point(random(-randomRange, randomRange), 
+        random(-randomRange, randomRange), 
+        random(-randomRange, randomRange));
 
       popMatrix();
     }
