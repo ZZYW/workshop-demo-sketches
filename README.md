@@ -1,12 +1,10 @@
 
 
-7/22
+# 7/22
 
-New Media Art Reference
+## New Media Art Reference
 
-[New Media Art](https://www.google.com/url?q=https://en.wikipedia.org/wiki/New_media_art&sa=D&ust=1500642994991000&usg=AFQjCNEYqFJvwTP1sZa1L7Aw7GLoRvQIXA) entry in 
-
-Wikepedia provides a concise introduction which links to more subcategories and practices within New Media Art.
+[New Media Art](https://www.google.com/url?q=https://en.wikipedia.org/wiki/New_media_art&sa=D&ust=1500642994991000&usg=AFQjCNEYqFJvwTP1sZa1L7Aw7GLoRvQIXA) entry in Wikepedia provides a concise introduction which links to more subcategories and practices within New Media Art.
 
 [Bitforms Gallery](https://www.google.com/url?q=http://www.bitforms.com/artists&sa=D&ust=1500642994991000&usg=AFQjCNGSV4kyjFz7dP-kxoQ03oaOqzNzJw), [Postmasters Gallery](https://www.google.com/url?q=http://www.postmastersart.com/&sa=D&ust=1500642994992000&usg=AFQjCNG3I1ssArLsS4f22Rf-6u0NGs-Q0Q), [The Knockdown Center](https://www.google.com/url?q=https://knockdown.center/&sa=D&ust=1500642994992000&usg=AFQjCNHyu_qSpXhhfBZPrSbGGyIyDxl4cg), [Pioneer Works](https://www.google.com/url?q=http://pioneerworks.org/&sa=D&ust=1500642994992000&usg=AFQjCNEn1Pquz6GuM7xR55bj71jBuOTY6g), [Flux Factory](https://www.google.com/url?q=http://www.fluxfactory.org/&sa=D&ust=1500642994992000&usg=AFQjCNGLR2dcSeXgZV9cxzysL4km4fkQRw) frequently feature career artists who work with digital and computational media.
 
@@ -28,7 +26,7 @@ code and digital technology in their artistic practice. Hopefully, their unique 
 
 Generative Art: [Casey Reas](https://www.google.com/url?q=http://reas.com/&sa=D&ust=1500642994995000&usg=AFQjCNFZdQdCZ8GqzM7Mj_ctCsJeKpkXEA), [Raven Kwok](https://www.google.com/url?q=http://ravenkwok.com/&sa=D&ust=1500642994995000&usg=AFQjCNEO5LCiiikjNjPj4xD0J3nCJIjf8Q)
 
-Interaction Art and Design: [Zach 
+### Interaction Art and Design: [Zach 
 
 Libberman](https://www.google.com/url?q=http://thesystemis.com/&sa=D&ust=1500642994995000&usg=AFQjCNFaHMSXAj2kGdPzm_wq9QSXbiaikA) 
 
