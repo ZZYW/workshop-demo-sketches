@@ -1,0 +1,5 @@
+This demo scene is intended to be run on a mobile device. It also includes a fog volume. It’s clearly visible in the scene, marked by a cube and a rotating text. When you enter/exit the fog volume, the fog’s alpha will change.
+
+To add a new fog volume, just click on the main menu Game Object / Create Other / Dynamic Fog Volume. Move it to desired location and adjust the collider geometry.
+
+Note: this scene is intended to run on a mobile device. Controls won’t work on desktop.

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalkingSimulator", "Walking
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalkingSimulator.Editor.Plugins", "WalkingSimulator.Editor.Plugins.csproj", "{2CBBABBE-AE4B-EEC0-E89C-4E50227F5B71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalkingSimulator.Editor", "WalkingSimulator.Editor.csproj", "{249030DA-DD74-0A1E-D8C4-87DC2C74B09E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{2CBBABBE-AE4B-EEC0-E89C-4E50227F5B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CBBABBE-AE4B-EEC0-E89C-4E50227F5B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CBBABBE-AE4B-EEC0-E89C-4E50227F5B71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{249030DA-DD74-0A1E-D8C4-87DC2C74B09E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{249030DA-DD74-0A1E-D8C4-87DC2C74B09E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{249030DA-DD74-0A1E-D8C4-87DC2C74B09E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{249030DA-DD74-0A1E-D8C4-87DC2C74B09E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
